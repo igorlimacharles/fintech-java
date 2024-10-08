@@ -3,6 +3,7 @@ package main;
 import user.BasicUserRegistration;
 import user.Login;
 import wallet.*;
+import category.*;
 
 import java.util.Scanner;
 
