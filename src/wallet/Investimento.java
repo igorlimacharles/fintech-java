@@ -1,14 +1,23 @@
 package wallet;
 
-public class Investimento extends ItemFinanceiro {
-    public Investimento(double valor, String categoria) {
-        super("Investimento", valor, categoria);
+import user.UsuarioBase;
+import category.Category;
+
+public class Investimento extends Transacao {
+    private double rentabilidade;
+    private String risco;
+    private String dataVencimento;
+
+    public Investimento(int id, UsuarioBase usuario, Category categoria, String descricao, double valor, String data, double rentabilidade, String risco, String dataVencimento) {
+        super(id, usuario, categoria, descricao, valor, data);
+        this.rentabilidade = rentabilidade;
+        this.risco = risco;
+        this.dataVencimento = dataVencimento;
     }
 
     @Override
-    public void exibirDetalhes() {
-        System.out.println("Tipo: " + tipo);
-        System.out.println("Categoria: " + categoria);
-        System.out.println("Valor Investido: R$ " + valor);
+    public void exibirTransacao() {
+        System.out.println("Investimento: " + getDescricao() + ", Rentabilidade: " + rentabilidade + "%, Risco: " + risco);
     }
 }
+
